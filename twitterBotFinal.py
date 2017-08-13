@@ -1,6 +1,13 @@
-from pal_my_keys import ACCESS_SECRET, ACCESS_TOKEN, CONSUMER_KEY, CONSUMER_SECRET
+
 import tweepy as ty
 import random
+
+
+CONSUMER_KEY="DdugkADlTTPwOxjRkVhWAXqXJ"
+CONSUMER_SECRET="pAWrNFKfg6GoJ5FG88UmzihivWJzCUgeHyRM6zvZNhk85vFJXj"
+ACCESS_TOKEN="790019103649955840-pc0jp8OIKF7Ct23aE7LJ1qA2UEdXWKg"
+ACCESS_SECRET="xtvhSi0oabLNS58mO9w1Wf9YDqwnHM3I0bOvXpvjTNrkK"
+
 
 
 def setTwitterAuth():
@@ -69,32 +76,18 @@ def replyHelloWorld(api, searchResults):
 
 
 if __name__ == "__main__":
-    # set up authorization with twitter via tweepy
     api = setTwitterAuth()
-    # tweet hello world!
-    #tweetHelloWorld(api)
-
-    # let's get the user object of your bot's account
     user = api.me()
-    # let's print the user object so you can see the fields it has
-    # print(user)
-
-    # here's your username! Notice how we accessed it?
     print(user.screen_name)
-    # Now let's use some of those fields to see your following/followers
+
     api.update_status("I have {} followers and follow {} accounts #{} LATESTT 2!!!"
                       .format(user.followers_count, user.friends_count,
                               random.randint(0, 10000)))
-    # Now let's get the last tweet of yours...
-    getTimeline(api, user)
-    # getLastTweet(api, user)
 
-    # let's search for the literal "hello world" <-- notice how I escape the
-    # quotes below. This will get me the terms with that specific string.
+    getTimeline(api, user)
+
     search = "#IOT"
     searchTweet(api, search)
-    #api.update_status("Liked tweet with #IOT!")
+
 
     likeTweetOfUser(api, "@boltiot", user)
-    # lets tweet at one of the tweets we found with search
-    # replyHelloWorld(api, searchResults)
