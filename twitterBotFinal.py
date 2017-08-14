@@ -9,19 +9,14 @@ ACCESS_TOKEN="790019103649955840-pc0jp8OIKF7Ct23aE7LJ1qA2UEdXWKg"
 ACCESS_SECRET="xtvhSi0oabLNS58mO9w1Wf9YDqwnHM3I0bOvXpvjTNrkK"
 
 
-
+#This function is used to obtain authorization from Twitter API by using keys.
 def setTwitterAuth():
     auth = ty.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
     auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
     api = ty.API(auth)
     return api
 
-
-def tweetHelloWorld(api):
-    api.update_status("This is an automated tweet"
-                      .format(random.randint(0, 10000)))
-
-
+#This method gets the last 100 tweets from the user's timelinereturns a list of tweet objects.
 def getTimeline(api, user):
     tweets = api.user_timeline(user.screen_name, count=100)
     tweets = [tweet for tweet in tweets]
