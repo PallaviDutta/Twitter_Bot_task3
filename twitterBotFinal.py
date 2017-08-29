@@ -3,10 +3,10 @@ import tweepy as ty
 import random
 
 
-CONSUMER_KEY="DdugkADlTTPwOxjRkVhWAXqXJ"
-CONSUMER_SECRET="pAWrNFKfg6GoJ5FG88UmzihivWJzCUgeHyRM6zvZNhk85vFJXj"
-ACCESS_TOKEN="790019103649955840-pc0jp8OIKF7Ct23aE7LJ1qA2UEdXWKg"
-ACCESS_SECRET="xtvhSi0oabLNS58mO9w1Wf9YDqwnHM3I0bOvXpvjTNrkK"
+CONSUMER_KEY=""
+CONSUMER_SECRET=""
+ACCESS_TOKEN=""
+ACCESS_SECRET=""
 
 
 #This function is used to obtain authorization from Twitter API by using keys.
@@ -80,3 +80,4 @@ if __name__ == "__main__":
 
 #This likes any tweet that has the hashtag '#IOT'
     likeTweetOfUser(api, "@boltiot", user)
+
